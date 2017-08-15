@@ -1,7 +1,8 @@
 from django.shortcuts import render, HttpResponse
 
 def index(request):
-	return HttpResponse("Oi, quero morrer!!!!!! <br><br><br> <a href='/rango/about/'> sobre </a>")
+	context_dict = {'boldmessage':'eu quero morrer'}
+	return render(request, 'rango/index.html', context_dict)
 	
 def about(request):
 	return HttpResponse("ainda quero morrer <br><br> <a href='/rango/'> inicial </a>")
